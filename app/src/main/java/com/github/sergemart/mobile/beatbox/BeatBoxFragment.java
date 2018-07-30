@@ -40,6 +40,7 @@ public class BeatBoxFragment extends Fragment {
 
     private void setWidgetAttributes() {
         mFragmentBinding.recyclerViewMainGrid.setLayoutManager(new GridLayoutManager(this.getActivity(), 3));
+        mFragmentBinding.recyclerViewMainGrid.setAdapter(new BeatBoxItemAdapter( this.getActivity() ));
     }
 
 
