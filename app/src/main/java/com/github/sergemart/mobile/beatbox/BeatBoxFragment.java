@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.github.sergemart.mobile.beatbox.databinding.FragmentBeatBoxBinding;
+import com.github.sergemart.mobile.beatbox.model.AssetRepository;
 
 
 public class BeatBoxFragment extends Fragment {
@@ -20,6 +21,17 @@ public class BeatBoxFragment extends Fragment {
 
 
     // --------------------------- Override fragment event handlers
+
+    /**
+     * View-unrelated startup actions
+     */
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        AssetRepository.get(this.getActivity());
+    }
+
 
     /**
      * View-related startup actions

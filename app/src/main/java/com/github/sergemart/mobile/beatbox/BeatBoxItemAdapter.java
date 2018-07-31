@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import com.github.sergemart.mobile.beatbox.databinding.ListItemSoundBinding;
+import com.github.sergemart.mobile.beatbox.model.AssetRepository;
 
 
 class BeatBoxItemAdapter extends RecyclerView.Adapter<BeatBoxItemHolder> {
@@ -39,6 +40,6 @@ class BeatBoxItemAdapter extends RecyclerView.Adapter<BeatBoxItemHolder> {
 
     @Override
     public int getItemCount() {
-        return 0;
+        return AssetRepository.get(mActivity).getSounds().size();
     }
 }
