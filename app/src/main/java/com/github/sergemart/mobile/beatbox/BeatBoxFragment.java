@@ -28,8 +28,7 @@ public class BeatBoxFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        AssetRepository.get(this.getActivity());
+        AssetRepository.get(this.getActivity());                                                    // init singleton preliminary
     }
 
 
@@ -45,6 +44,13 @@ public class BeatBoxFragment extends Fragment {
         this.setWidgetAttributes();
 
         return mFragmentBinding.getRoot();
+    }
+
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        AssetRepository.get(this.getActivity()).unloadSounds();
     }
 
 

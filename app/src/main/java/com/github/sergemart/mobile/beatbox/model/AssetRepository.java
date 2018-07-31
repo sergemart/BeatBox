@@ -66,6 +66,13 @@ public class AssetRepository {
     }
 
 
+    // --------------------------- Maintenance
+
+    public void unloadSounds() {
+        mSoundPool.release();
+    }
+
+
     // --------------------------- Local subroutines
 
 

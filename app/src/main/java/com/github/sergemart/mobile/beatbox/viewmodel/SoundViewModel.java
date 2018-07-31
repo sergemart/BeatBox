@@ -53,7 +53,7 @@ public class SoundViewModel extends BaseObservable {
 
     // --------------------------- Event handlers to use in layouts
 
-    public void onButtonClicked() {
+    public void playItem() {
         mAssetRepository.playSound(mSound);
     }
 }

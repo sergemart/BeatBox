@@ -1,7 +1,5 @@
 package com.github.sergemart.mobile.beatbox.viewmodel;
 
-import android.content.Context;
-
 import com.github.sergemart.mobile.beatbox.model.AssetRepository;
 import com.github.sergemart.mobile.beatbox.model.Sound;
 
@@ -46,7 +44,7 @@ public class SoundViewModelTest {
 
     @Test
     public void calls_Repository_Play_On_Button_Clicked() {
-        mSubject.onButtonClicked();
+        mSubject.playItem();
         verify(mAssetRepository).playSound(mSound);
     }
 }
