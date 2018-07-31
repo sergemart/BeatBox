@@ -12,10 +12,11 @@ class BeatBoxItemHolder extends RecyclerView.ViewHolder {
     private ListItemSoundBinding mBinding;
 
 
-    BeatBoxItemHolder(ListItemSoundBinding binding) {
-        super( binding.getRoot() );
-        mBinding = binding;
-        mBinding.setSoundViewModel(new SoundViewModel());
+    BeatBoxItemHolder(ListItemSoundBinding listItemSoundBinding) {
+        super( listItemSoundBinding.getRoot() );
+
+        mBinding = listItemSoundBinding;
+        mBinding.setSoundViewModel( new SoundViewModel() );
     }
 
 

@@ -20,7 +20,7 @@ public class SoundViewModel {
     }
 
 
-    // --------------------------- Binding methods
+    // --------------------------- Binding methods to use in layouts
 
     public String getItemTitle() {
         return mSound.getName();
