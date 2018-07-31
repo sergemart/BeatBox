@@ -1,9 +1,12 @@
 package com.github.sergemart.mobile.beatbox.viewmodel;
 
+import android.databinding.BaseObservable;
+import android.databinding.Bindable;
+
 import com.github.sergemart.mobile.beatbox.model.Sound;
 
 
-public class SoundViewModel {
+public class SoundViewModel extends BaseObservable {
 
     private Sound mSound;
 
@@ -17,11 +20,13 @@ public class SoundViewModel {
 
     public void setSound(Sound sound) {
         mSound = sound;
+        this.notifyChange();
     }
 
 
-    // --------------------------- Binding methods to use in layouts
+    // --------------------------- Bindable methods to use in layouts
 
+    @Bindable
     public String getItemTitle() {
         return mSound.getName();
     }
