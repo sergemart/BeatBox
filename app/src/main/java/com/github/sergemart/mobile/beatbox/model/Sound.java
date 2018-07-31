@@ -4,6 +4,7 @@ public class Sound {
 
     private String mAssetPath;                                                                      // full file name
     private String mName;                                                                           // sound name got from the file name
+    private Integer mSoundId;                                                                       // ID for the SoundPool
 
 
     Sound(String assetPath) {
@@ -13,7 +14,8 @@ public class Sound {
         mName = fileName.replace(".wav", "");
     }
 
-    // --------------------------- Getters
+
+    // --------------------------- Getters/ setters
 
     public String getAssetPath() {
         return mAssetPath;
@@ -23,4 +25,16 @@ public class Sound {
     public String getName() {
         return mName;
     }
+
+
+    public int getSoundId() {
+        return mSoundId;
+    }
+
+
+    public void setSoundId(int soundId) {
+        mSoundId = soundId;
+    }
+
+
 }
