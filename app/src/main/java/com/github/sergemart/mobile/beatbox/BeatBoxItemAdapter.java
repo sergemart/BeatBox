@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 
 import com.github.sergemart.mobile.beatbox.databinding.ListItemSoundBinding;
 import com.github.sergemart.mobile.beatbox.model.AssetRepository;
+import com.github.sergemart.mobile.beatbox.model.Sound;
 
 
 class BeatBoxItemAdapter extends RecyclerView.Adapter<BeatBoxItemHolder> {
@@ -35,6 +36,8 @@ class BeatBoxItemAdapter extends RecyclerView.Adapter<BeatBoxItemHolder> {
     // Should be lightweight to smooth scrolling
     @Override
     public void onBindViewHolder(@NonNull BeatBoxItemHolder holder, int position) {
+        Sound sound = AssetRepository.get(mActivity).getSounds().get(position);
+        holder.bind(sound);
     }
 
 
