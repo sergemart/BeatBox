@@ -29,7 +29,7 @@ class BeatBoxItemAdapter extends RecyclerView.Adapter<BeatBoxItemHolder> {
     public BeatBoxItemHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(mActivity);
         ListItemSoundBinding listItemSoundBinding = DataBindingUtil.inflate(inflater, R.layout.list_item_sound, parent, false);
-        return new BeatBoxItemHolder(listItemSoundBinding);
+        return new BeatBoxItemHolder(listItemSoundBinding, mActivity);
     }
 
 
