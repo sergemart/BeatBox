@@ -28,6 +28,7 @@ public class BeatBoxFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setRetainInstance(true);                                                                    // retain the fragment between the hosting activity lives
         AssetRepository.get(this.getActivity());                                                    // init singleton preliminary
     }
 
