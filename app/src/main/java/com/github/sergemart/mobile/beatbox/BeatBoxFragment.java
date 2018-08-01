@@ -29,7 +29,7 @@ public class BeatBoxFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRetainInstance(true);                                                                    // retain the fragment between the hosting activity lives
-        AssetRepository.get(this.getActivity());                                                    // init singleton preliminary
+        AssetRepository.get(this.getActivity()).loadSounds();                                       // init singleton if needed and load the sounds
     }
 
 

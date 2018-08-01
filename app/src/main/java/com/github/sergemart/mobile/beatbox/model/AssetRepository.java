@@ -44,7 +44,7 @@ public class AssetRepository {
      * Factory method
      */
     public static AssetRepository get(Context context) {
-        if(sAssetRepository == null) {
+        if (sAssetRepository == null) {
             sAssetRepository = new AssetRepository(context);
         }
         return sAssetRepository;
@@ -71,7 +71,7 @@ public class AssetRepository {
     /**
      * Load a list of Sounds into the member variable and the media files into the SoundPool
      */
-    private void loadSounds() {
+    public void loadSounds() {
         String[] fileNames;
         try {
             fileNames = mAssetManager.list(SOUNDS_FOLDER);
@@ -86,21 +86,13 @@ public class AssetRepository {
             Sound sound = new Sound(assetPath);
             mSounds.add(sound);
             try {
-                this.loadSound(sound);
+                AssetFileDescriptor assetFileDescriptor = mAssetManager.openFd(sound.getAssetPath());
+                Integer soundId = mSoundPool.load(assetFileDescriptor, 1);
+                sound.setSoundId(soundId);                                                          // enrich the Sound with its media ID
             } catch (IOException ioe) {
                 Log.e(TAG, "Could not load sound " + fileName, ioe);
             }
         }
-    }
-
-
-    /**
-     * Load a sound media file into the SoundPool
-     */
-    private void loadSound(Sound sound) throws IOException {
-        AssetFileDescriptor assetFileDescriptor = mAssetManager.openFd(sound.getAssetPath());
-        Integer soundId = mSoundPool.load(assetFileDescriptor, 1);
-        sound.setSoundId(soundId);
     }
 
 
