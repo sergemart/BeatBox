@@ -71,7 +71,7 @@ public class AssetRepository {
     /**
      * Load a list of Sounds into the member variable and the media files into the SoundPool
      */
-    public void loadSounds() {
+    private void loadSounds() {
         String[] fileNames;
         try {
             fileNames = mAssetManager.list(SOUNDS_FOLDER);
@@ -94,14 +94,5 @@ public class AssetRepository {
             }
         }
     }
-
-
-    /**
-     * Unload sound media
-     */
-    public void unloadSounds() {
-        mSoundPool.release();
-    }
-
 
 }
