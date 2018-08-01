@@ -11,7 +11,7 @@
     </style>
 
     <style name="BeatBoxButton" parent="Base.Widget.AppCompat.Button">
-        <item name="android:background">@color/darkBlue</item>
+        <item name="android:background">@drawable/button</item>
     </style>
 
 </resources>
