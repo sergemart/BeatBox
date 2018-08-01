@@ -8,11 +8,20 @@
             type="com.github.sergemart.mobile.beatbox.viewmodel.SoundViewModel"/>
     </data>
 
-    <Button
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:text="@{soundViewModel.itemTitle}"
-        android:onClick="@{() -> soundViewModel.playItem()}"
-        tools:text="Sound name"/>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp">
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:text="@{soundViewModel.itemTitle}"
+            android:onClick="@{() -> soundViewModel.playItem()}"
+            tools:text="Sound name"/>
+
+    </FrameLayout>
+
 
 </layout>
