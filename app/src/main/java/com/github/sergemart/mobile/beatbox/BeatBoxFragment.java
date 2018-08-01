@@ -104,7 +104,7 @@ public class BeatBoxFragment extends Fragment {
     // --------------------------- Static encapsulation-leveraging methods
 
     /**
-     * Create BeatBoxFragment provided with arguments containing the given crime UUID
+     * Create BeatBoxFragment instance
      */
     public static BeatBoxFragment newInstance() {
         return new BeatBoxFragment();
