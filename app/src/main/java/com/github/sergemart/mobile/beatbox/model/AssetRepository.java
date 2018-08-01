@@ -66,18 +66,10 @@ public class AssetRepository {
     }
 
 
-    // --------------------------- Maintenance
-
-    public void unloadSounds() {
-        mSoundPool.release();
-    }
-
-
-    // --------------------------- Local subroutines
-
+    // --------------------------- Media controls
 
     /**
-     * Load a list of Sounds into the member variable and the Sounds' media into the SoundPool
+     * Load a list of Sounds into the member variable and the media files into the SoundPool
      */
     private void loadSounds() {
         String[] fileNames;
@@ -103,11 +95,21 @@ public class AssetRepository {
 
 
     /**
-     * Load a sound into the SoundPool
+     * Load a sound media file into the SoundPool
      */
     private void loadSound(Sound sound) throws IOException {
         AssetFileDescriptor assetFileDescriptor = mAssetManager.openFd(sound.getAssetPath());
         Integer soundId = mSoundPool.load(assetFileDescriptor, 1);
         sound.setSoundId(soundId);
     }
+
+
+    /**
+     * Unload sound media
+     */
+    public void unloadSounds() {
+        mSoundPool.release();
+    }
+
+
 }
