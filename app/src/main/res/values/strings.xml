@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">BeatBox</string>
+    <string name="app_name" translatable="false">BeatBox</string>
+    <string name="label_seekbar_prefix">Playback Speed:</string>
+    <string name="label_seekbar_postfix" translatable="false">%</string>
 </resources>
