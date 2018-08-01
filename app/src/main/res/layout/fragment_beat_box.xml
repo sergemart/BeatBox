@@ -14,11 +14,11 @@
             android:layout_height="0dp"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/textView_label_seekbar_prefix"
+            app:layout_constraintBottom_toTopOf="@+id/label_seekbar_prefix"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView_label_seekbar_prefix"
+            android:id="@+id/label_seekbar_prefix"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
@@ -30,25 +30,25 @@
             tools:text="Playback Speed:" />
 
         <TextView
-            android:id="@+id/textView_label_seekbar_value"
+            android:id="@+id/label_seekbar_value"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginStart="4dp"
             android:textSize="12sp"
             app:layout_constraintBottom_toTopOf="@+id/seekBar_playback_speed"
-            app:layout_constraintStart_toEndOf="@+id/textView_label_seekbar_prefix"
+            app:layout_constraintStart_toEndOf="@+id/label_seekbar_prefix"
             tools:text="51" />
 
         <TextView
-            android:id="@+id/textView_label_seekbar_postfix"
+            android:id="@+id/label_seekbar_postfix"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:text="@string/label_seekbar_postfix"
             android:textSize="12sp"
             app:layout_constraintBottom_toTopOf="@+id/seekBar_playback_speed"
-            app:layout_constraintStart_toEndOf="@+id/textView_label_seekbar_value"
+            app:layout_constraintStart_toEndOf="@+id/label_seekbar_value"
             tools:text="%" />
 
 

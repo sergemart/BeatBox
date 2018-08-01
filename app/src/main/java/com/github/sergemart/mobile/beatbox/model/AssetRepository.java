@@ -21,12 +21,14 @@ public class AssetRepository {
     private static final String TAG = "AssetRepository";
     private static final String SOUNDS_FOLDER = "sample_sounds";
     private static final int MAX_SOUNDS = 5;
+    public static final int INITIAL_PLAYBACK_SPEED = 100;
 
     private static AssetRepository sAssetRepository;
 
     private AssetManager mAssetManager;
     private List<Sound> mSounds;
     private SoundPool mSoundPool;
+    private int mPlaybackSpeed = 100;
 
 
     /**
@@ -51,6 +53,13 @@ public class AssetRepository {
     }
 
 
+    // --------------------------- Getters/ setters
+
+    public void setPlaybackSpeed(int playbackSpeed) {
+        mPlaybackSpeed = playbackSpeed;
+    }
+
+
     // --------------------------- Sound CRUD
 
     public List<Sound> getSounds() {
@@ -62,7 +71,8 @@ public class AssetRepository {
     public void playSound(Sound sound) {
         Integer soundId = sound.getSoundId();
         if (soundId == null) return;
-        mSoundPool.play(soundId, 1.0f, 1.0f, 1, 0, 1.0f);
+        float rate = mPlaybackSpeed/100.0f;                                                         // to avoid integer division and a double result
+        mSoundPool.play(soundId, 1.0f, 1.0f, 1, 0, rate);
     }
 
 
